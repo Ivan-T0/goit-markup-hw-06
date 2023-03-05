@@ -1199,6 +1199,23 @@ body {
     
     .email {}
 
+    .icon-form-next{
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    width: 18px;
+    height: 24px;
+
+
+    fill: var(--c-black);
+    transition: fill var(--transition);
+    }
+    
+    .form-input:focus+.icon-form-next {
+    
+        fill: var(--bgr-blue);
+    }
+
     .comment-label{
         display: inline-block;
             margin-bottom: 4px;
