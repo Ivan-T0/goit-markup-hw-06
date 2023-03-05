@@ -784,6 +784,7 @@ body {
 
    
     .button-message{
+        outline: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1297,6 +1298,7 @@ body {
 
     }
     .form-button{
+    outline: none;
     display: block;
     margin: 0 auto;
     margin-top: 24px;
