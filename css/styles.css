@@ -748,29 +748,34 @@ body {
          max-width: 264px;
          max-height: 40px;
          height: 100%;
-        
-
-
-
+        color: var(--c-white);
 
         font-weight: 500;
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
         
-            color:var(--c-white);
+            
     }
     .input-message{
       
         width: 264px;
         height: 40px;
         border: currentColor;
+        color: var(--c-white);
         border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
             border-radius: 4px;
             background-color: transparent;
             transition: border var(--transition);
     }
+    .input-message:focus{
+        border: 1px solid var(--bgr-blue);
+
+    }
+   
+
+
     .button-subscribe{
        
     }
@@ -1106,7 +1111,7 @@ body {
         line-height: 1.5;
         text-align: center;
         letter-spacing: 0.02em;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
             
         }
     .modal-fieldset{
@@ -1126,114 +1131,126 @@ body {
     }
     .contact-form{
         position: relative;
+        margin-bottom: 8px;
        
 
     }
-    /* .contact-form:hover,
-    .contact-form:focus{
-            border: 1px solid var(--bgr-blue);
-            border-radius: 4px;
-        } 
-         */
+        .form-input {
+            position: relative;
     
+    
+            width: 100%;
+            border-radius: 4px;
+            height: 40px;
+            padding-left: 38px;
+            border: 1px solid rgba(33, 33, 33, 0.2);
+            border-radius: 4px;
+            transition: border var(--transition);
+    
+        }
+    
+        .icon-form {
+            position: absolute;
+            top: 11px;
+            left: 16px;
+    
+            width: 18px;
+            height: 18px;
+            fill: var(--c-black);
+            transition: fill var(--transition);
+        }
+    
+    
+        .form-input:focus {
+            border: 1px solid var(--bgr-blue);
+        }
+    
+    
+        .form-input:focus+.icon-form {
+    
+            fill: var(--bgr-blue);
+        }
+   
     .form-label {
         
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.04em;
         
-
+        
         display: block;
-        margin-top: 8px;
         margin-bottom: 4px;
         color: var(--border-c-icon);
 
         
        
     }
-
-    .form-input {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.16;
-        letter-spacing: 0.04em;
-       
-        width: 100%;
-        border-radius: 4px;
-        height: 40px;
-        padding-left: 38px;
-        border: 1px solid rgba(33, 33, 33, 0.2);
-        border-radius: 4px;
-        transition: border var(--transition) , fill var(--transition);
-       
+    .input-box{
+        position: relative;
     }
+
     
-    .form-input:focus + .icon-form {
-        fill: var(--bgr-blue);
-    }
-
-    .form-input:focus + .icon-form-next{
-        fill: var(--bgr-blue);
-    }
-    .form-input:focus {
-            border: 1px solid var(--bgr-blue);
-        }
        
     
    
     
     .email {}
 
+    .comment-label{
+        display: inline-block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            line-height: 1.17px;
+            letter-spacing: .01em;
+            color: #757575;
+    }
+   
     .form-comment{
         width: 100%;
         border-radius: 4px;
         resize: none;
         height: 120px;
-        border: 1px solid rgba(33, 33, 33, 0.2);
         border-radius: 4px;
+        padding: 8px 16px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        transition: border var(--transition);
         
 
     }
-    .icon-form{
-        position: absolute;
-        top: 11px;
-        left:16px;
-        
-        width: 18px;
-        height: 18px;
+    .form-comment:focus{
+        border: 1px solid var(--bgr-blue);
     }
-    .icon-form-next{
-        position: absolute;
-        top: 8px;
-        left: 16px;
-        width: 18px;
-        height: 24px;
-    }
+    
+    
     .input-checkbox{
-        border: #31D0AA;display: block;
-        width: 25px;
-        height: 25px;
-        /* appearance: none; */
+       
+        appearance: none;
         position: absolute;
-        /* width: 0;
-        height: 0; */
+        width: 0;
+        height: 0;
     }
-    .icon-checkbox{
-    position: absolute;
-        top: 0;
-        left: 0;
-        width: 16px;
-        height: 16px;
-        fill: var(--c-white);
-        border: 1.25px solid var(--bgr-black);
-        border-radius: 2px;
-        
-    }
+   
 
     .span-check{
+    position: absolute;
+    top: 0;
+    left: 0;
+     width: 16px;
+     height: 16px;
+    border: 1.25px solid var(--bgr-black);
+    border-radius: 2px;
+    }
+    .input-checkbox:checked + .span-check{
+        background-image: url(../images/click-checkbox.svg);
+        background-color: var(--bgr-blue);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-color: var(--bgr-blue);
+    }
+
+
     
-       
-    }
-    .input-checkbox:checked ~ .icon-checkbox{
-       border: var(--bgr-blue);
-    }
 
     .label-checkbox{
         position: relative;
@@ -1247,13 +1264,27 @@ body {
 
     }
     .form-button{
-        display: flex;
-        align-items: center;
-        justify-content: center ;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+
+           
+            text-align: center;
+            
         margin: 24px 120px;
         width: 159px;
         height: 56px;
-        background-color: var(--bgr-blue);
+        background-color: var(--c-blue);
         color: var(--c-white);
-        border: var(--bgr-blue) ;
+        border: 1px solid var(--bgr-blue);
+        border-radius: 4px;
+        transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    .form-button:hover,
+    .form-button:focus {
+        background-color: var(--bgr-blue2);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    
     }
