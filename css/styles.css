@@ -731,6 +731,7 @@ body {
     
     }
     
+    
     .logo-link {
         display: block;
         height: 22px;
@@ -946,6 +947,7 @@ body {
     
         display: block;
         height: auto;
+        transition: box-shodow var(--transition);
     }
     
     .cards-image {
